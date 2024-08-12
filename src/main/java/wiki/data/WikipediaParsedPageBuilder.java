@@ -13,6 +13,7 @@ public class WikipediaParsedPageBuilder {
     private List<String> parsedParagraphs;
     private String redirectTitle;
     private WikipediaParsedPageRelations relations;
+    private String wikipediaPageId;
 
     public WikipediaParsedPageBuilder setTitle(String title) {
         this.title = title;
@@ -43,8 +44,13 @@ public class WikipediaParsedPageBuilder {
         this.parsedParagraphs = parsedParagraphs;
         return this;
     }
+    
+    public WikipediaParsedPageBuilder setWikipediaPageId(long id) {
+        this.wikipediaPageId = String.valueOf(id);
+        return this;
+    }
 
     public WikipediaParsedPage build() {
-        return new WikipediaParsedPage(this.title, this.id, this.text, this.parsedParagraphs, this.redirectTitle, this.relations);
+        return new WikipediaParsedPage(this.title, this.id, this.text, this.parsedParagraphs, this.redirectTitle, this.relations, this.wikipediaPageId);
     }
 }

@@ -175,7 +175,8 @@ public class WikipediaSTAXParser implements Closeable {
                             .setId(id)
                             .setTitle(title)
                             .setRedirectTitle(redirect)
-                            .setRelations(relations);
+                            .setRelations(relations)
+                            .setWikipediaPageId(id);
 
                     if(includeRawText && !text.isEmpty()) {
                         pageBuilder.setText(text);

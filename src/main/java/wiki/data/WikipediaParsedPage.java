@@ -14,14 +14,16 @@ public class WikipediaParsedPage {
     private final List<String> parsedParagraphs;
     private final String redirectTitle;
     private final WikipediaParsedPageRelations relations;
+    private String wikipediaPageId;
 
-    public WikipediaParsedPage(String title, long id, String text, List<String> parsedParagraphs, String redirectTitle, WikipediaParsedPageRelations relations) {
+    public WikipediaParsedPage(String title, long id, String text, List<String> parsedParagraphs, String redirectTitle, WikipediaParsedPageRelations relations, String wikipediaPageId) {
         this.title = title;
         this.id = id;
         this.text = text;
         this.parsedParagraphs = parsedParagraphs;
         this.redirectTitle = redirectTitle;
         this.relations = relations;
+        this.wikipediaPageId = wikipediaPageId;
     }
 
     public WikipediaParsedPage(WikipediaParsedPage page) {
@@ -31,6 +33,7 @@ public class WikipediaParsedPage {
         this.parsedParagraphs = page.parsedParagraphs;
         this.redirectTitle = page.redirectTitle;
         this.relations = page.relations;
+        this.wikipediaPageId = page.wikipediaPageId;
     }
 
     public String getTitle() {
@@ -55,6 +58,10 @@ public class WikipediaParsedPage {
 
     public WikipediaParsedPageRelations getRelations() {
         return relations;
+    }
+    
+    public String getWikipediaPageId() {
+        return wikipediaPageId;
     }
 
     public boolean isValid() {
@@ -81,6 +88,7 @@ public class WikipediaParsedPage {
                 ", id='" + id + '\'' +
                 ", redirectTitle='" + redirectTitle + '\'' +
                 ", text='" + text + '\'' +
+                ", wikipediaPageId='" + wikipediaPageId + '\'' +
                 '}';
     }
 }
