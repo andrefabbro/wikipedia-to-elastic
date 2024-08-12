@@ -1,5 +1,5 @@
 {
-  "indexName": "test_en",
+  "indexName": "enwiki_v3",
   "docType": "wikipage",
   "insertBulkSize": 100,
   "mapping": "mapping.json",
